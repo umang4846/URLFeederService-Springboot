@@ -8,3 +8,6 @@ docker run --name url-feeder-service -p 8085:8085 url-feeder-service
 
 docker inspect url-project
 
+//go into docker bash
+docker exec -it kafka /bin/sh
+

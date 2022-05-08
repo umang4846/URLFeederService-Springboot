@@ -14,3 +14,6 @@ kafka-console-producer.sh --broker-list 127.0.0.1:9092 --topic html_file
 //consume topic
 kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic html_file
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic html_topic
+
+//delete topic
+kafka-topics.sh --zookeeper 172.17.0.1:2181 --delete --topic html_topic

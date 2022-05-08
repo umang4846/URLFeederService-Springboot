@@ -1,16 +1,14 @@
 package com.umang.springboot.urlfeederservice.model;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
@@ -18,14 +16,23 @@ import java.sql.Timestamp;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Table(name = "url")
-public class URL {
+public class URL implements Serializable {
     @Id
     String id;
 
     String url;
 
-    @CreatedDate
+    @Column(name = "times_processed")
+    Integer timesProcessed;
+
+    @Column(name = "content_type")
+    String contentType;
+
+    @Column(name = "last_processed")
+    Timestamp lastProcessed;
+
     @Column(name = "created_date")
     Timestamp createdDate;
 }

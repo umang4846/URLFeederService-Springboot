@@ -1,0 +1,5 @@
+docker run --name cass1 -p9042:9042 -e CASSANDRA_CLUSTER_NAME=CassCluster -e CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch -e CASSANDRA_DC=dc1 -d cassandra
+
+
+docker run --name cass2 -e CASSANDRA_SEEDS=172.17.0.3 -e CASSANDRA_CLUSTER_NAME=CassCluster -e CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch -e CASSANDRA_DC=dc2 -d cassandra
+

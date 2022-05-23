@@ -1,0 +1,4 @@
+docker build -f Dockerfile -t nginx-urlfeeder .
+
+//run load balancer
+docker run --name urlfeeder-lb -p8080:8080 nginx-urlfeeder
